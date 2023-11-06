@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  	$('.btnclk').click(function(){
+    	var currentText = $(this).text();
+        var prevText = $(this).prev().text();
+        var nextText = $(this).next().text();
+        if(prevText != ''){
+        	$(this).text(prevText);
+            $(this).prev().text(currentText);
+        }else{
+        	$(this).text(nextText);
+            $(this).next().text(currentText);
+        }
+	});
+});
+</script>
+<style>
+.btnclk {
+  display: flex;
+  flex-direction: column; 
+}
+</style>
+</head>
+<body>
+
+  <button class = "btnclk" type="button">Button1</button>
+  <button class = "btnclk" type="button">Button2</button>
+  <button class = "btnclk" type="button">Button3</button>
+
+  
+
+
+</body>
+</html>
